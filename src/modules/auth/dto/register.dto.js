@@ -9,7 +9,7 @@ class RegisterDto extends BaseDto {
       .min(5)
       .required()
       .max(12)
-      .message("Password must contains 5 character"),
+      .message("Password must contain at least 5 character"),
     role: Joi.string().valid("customer", "seller").default("customer"),
   });
 }
