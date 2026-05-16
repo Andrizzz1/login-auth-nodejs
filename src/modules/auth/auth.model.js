@@ -25,29 +25,33 @@ const userSchema = new Schema(
     },
     role: {
       type: String,
-      enum: ["seller", "customer", "admin"],
-      default: "customer",
+      enum: ["user", "admin"],
+      default: "user",
     },
     isVerified: {
       type: Boolean,
-      default: false,
-      select: false,
+      default:false,
+      select:false
     },
     verificationToken: {
-      type: String,
-      select: false,
+      type:String,
+      select:false
+    },
+    verificationExpireIn: {
+      type: Date,
+      select:false
     },
     refreshToken: {
       type: String,
-      select: false,
+      select:false
     },
     resetPasswordToken: {
       type: String,
-      select: false,
+      select:false
     },
     resetPasswordExpire: {
       type: Date,
-      select: false,
+      select: false
     },
   },
   { timestamps: true },
