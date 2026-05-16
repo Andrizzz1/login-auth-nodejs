@@ -23,13 +23,32 @@ const userSchema = new Schema(
       required: true,
       select: false,
     },
-    role: {},
-    isVerified: {},
-    verificationToken: {},
-    verificationExpireIn: {},
-    refreshToken: {},
-    resetPasswordToken: {},
-    resetPasswordExpire: {},
+    role: {
+      type: String,
+      enum: ["seller", "customer", "admin"],
+      default: "customer",
+    },
+    isVerified: {
+      type: Boolean,
+      default: false,
+      select: false,
+    },
+    verificationToken: {
+      type: String,
+      select: false,
+    },
+    refreshToken: {
+      type: String,
+      select: false,
+    },
+    resetPasswordToken: {
+      type: String,
+      select: false,
+    },
+    resetPasswordExpire: {
+      type: Date,
+      select: false,
+    },
   },
   { timestamps: true },
 );
